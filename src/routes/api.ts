@@ -6,6 +6,7 @@ import mediaMiddleware from "../middlewares/media.middleware";
 import { ROLES } from "../utils/constant";
 import mediaController from "../controllers/mediaController";
 import categoryController from "../controllers/categoryController";
+import eventController from "../controllers/eventController";
 import regionController from "../controllers/regionController";
 
 const router = express.Router();
@@ -29,6 +30,22 @@ router.delete("/category/:id",
     [authMiddleware, aclMiddleware([ROLES.ADMIN])],
     categoryController.remove
 );
+
+router.post("/events", 
+    [authMiddleware, aclMiddleware([ROLES.ADMIN])], 
+    eventController.create
+);
+router.get("/events", eventController.findAll);
+router.get("/events/:id", eventController.findOne);
+router.put("/events/:id", 
+    [authMiddleware, aclMiddleware([ROLES.ADMIN])], 
+    eventController.update
+);
+router.delete("/events/:id", 
+    [authMiddleware, aclMiddleware([ROLES.ADMIN])], 
+    eventController.remove
+);
+router.get("/events/:slug/slug", eventController.findOneBySlug);
 
 router.get("/regions", regionController.getAllProvinces);
 router.get("/regions/:id/province", regionController.getProvince);
