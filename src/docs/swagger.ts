@@ -41,7 +41,29 @@ const doc = {
             },
             ActivationRequest: {
                 code: "abcdef",
-            }
+            },
+            CreateCategoryRequest: {
+                name: "",
+                description: "",
+                icon: "",
+            },
+            CreateEventRequest: {
+                "name": "",
+                "banner": "",
+                "category": "category ObjectID",
+                "description": "",
+                "startDate": "yyyy-mm-dd hh:mm:ss",
+                "endDate": "yyyy-mm-dd hh:mm:ss",
+                "location": {
+                    "region": "region id",
+                    "coordinates": [0, 0],
+                },
+                "isOnline": true,
+                "isFeatured": true
+            },
+            RemoveMediaRequest: {
+                fileUrl: "",
+            },
         },
     },
 };
