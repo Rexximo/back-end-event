@@ -717,11 +717,11 @@
         "properties": {
           "identifier": {
             "type": "string",
-            "example": "Rexximo"
+            "example": "letibnuasrexximo@yopmail.com"
           },
           "password": {
             "type": "string",
-            "example": "user123"
+            "example": "Rexximoo13#"
           }
         },
         "xml": {
