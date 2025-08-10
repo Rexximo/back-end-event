@@ -23,7 +23,7 @@ const doc = {
     components: {
         securitySchemes: {
             bearerAuth: {
-                type: "http",
+                type: "https",
                 scheme: "bearer",
             },
         },
